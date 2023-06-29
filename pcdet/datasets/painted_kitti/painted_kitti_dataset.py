@@ -208,6 +208,7 @@ class PaintedKittiDataset(DatasetTemplate):
         return list(infos)
 
     def create_groundtruth_database(self, info_path=None, used_classes=None, split='train'):
+        from pathlib import Path
         import torch
 
         database_save_path = Path(self.root_path) / ('gt_database' if split == 'train' else ('gt_database_%s' % split))
